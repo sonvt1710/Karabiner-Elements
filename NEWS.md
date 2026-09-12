@@ -1,6 +1,6 @@
 # Changelog
 
-## Karabiner-Elements 16.4.0
+## Beta
 
 - ⚡️ Improvements
     - EventViewer now displays Caps Lock LED state changes with an appropriate name instead of "Unsupported HID usage".
