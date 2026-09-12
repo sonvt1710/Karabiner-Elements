@@ -192,6 +192,7 @@ private:
                         {"showIcon", configuration_loaded && global_configuration.get_show_in_menu_bar()},
                         {"showProfileName", configuration_loaded && global_configuration.get_show_profile_name_in_menu_bar()},
                         {"showAdditionalMenuItems", configuration_loaded && global_configuration.get_show_additional_menu_items()},
+                        {"showQuitConfirmationMenu", global_configuration.get_show_quit_confirmation_menu()},
                         {"enableMultitouchExtension", configuration && configuration->get_machine_specific().get_entry().get_enable_multitouch_extension()},
                     },
                 },

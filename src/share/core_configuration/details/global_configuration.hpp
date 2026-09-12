@@ -32,6 +32,10 @@ public:
                                          show_additional_menu_items_,
                                          false);
 
+    helper_values_.push_back_value<bool>("show_quit_confirmation_menu",
+                                         show_quit_confirmation_menu_,
+                                         true);
+
     helper_values_.push_back_value<bool>("enable_notification_window",
                                          enable_notification_window_,
                                          true);
@@ -127,6 +131,13 @@ public:
     show_additional_menu_items_ = value;
   }
 
+  [[nodiscard]] const bool& get_show_quit_confirmation_menu() const {
+    return show_quit_confirmation_menu_;
+  }
+  void set_show_quit_confirmation_menu(bool value) {
+    show_quit_confirmation_menu_ = value;
+  }
+
   [[nodiscard]] const bool& get_enable_notification_window() const {
     return enable_notification_window_;
   }
@@ -214,6 +225,7 @@ private:
   bool show_in_menu_bar_;
   bool show_profile_name_in_menu_bar_;
   bool show_additional_menu_items_;
+  bool show_quit_confirmation_menu_;
   bool enable_notification_window_;
   std::string notification_window_position_;
   bool notification_window_respect_screen_visible_frame_;

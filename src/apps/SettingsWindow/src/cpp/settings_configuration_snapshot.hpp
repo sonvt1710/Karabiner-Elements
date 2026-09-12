@@ -38,6 +38,7 @@ public:
              {"show_in_menu_bar", global.get_show_in_menu_bar()},
              {"show_profile_name_in_menu_bar", global.get_show_profile_name_in_menu_bar()},
              {"show_additional_menu_items", global.get_show_additional_menu_items()},
+             {"show_quit_confirmation_menu", global.get_show_quit_confirmation_menu()},
              {"enable_notification_window", global.get_enable_notification_window()},
              {"notification_window_position", global.get_notification_window_position()},
              {"notification_window_respect_screen_visible_frame", global.get_notification_window_respect_screen_visible_frame()},

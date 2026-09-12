@@ -119,25 +119,36 @@ struct KarabinerConsoleUserServerApp: App {
           }
         )
 
-        Menu(
-          content: {
-            Text("Are you sure you want to quit?")
+        if state.menuSettings.showQuitConfirmationMenu {
+          Menu(
+            content: {
+              Text("Are you sure you want to quit?")
 
-            Divider()
+              Divider()
 
-            Button(
-              action: {
-                console_user_server_quit()
-              },
-              label: {
-                quitLabel
-              }
-            )
-          },
-          label: {
-            quitLabel
-          }
-        )
+              Button(
+                action: {
+                  console_user_server_quit()
+                },
+                label: {
+                  quitLabel
+                }
+              )
+            },
+            label: {
+              quitLabel
+            }
+          )
+        } else {
+          Button(
+            action: {
+              console_user_server_quit()
+            },
+            label: {
+              quitLabel
+            }
+          )
+        }
       },
       label: {
         HStack(spacing: 8.0) {

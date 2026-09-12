@@ -27,6 +27,9 @@ public:
                                    "show_additional_menu_items",
                                    [&](auto value) { global.set_show_additional_menu_items(value); });
       changed |= apply_value<bool>(global_json,
+                                   "show_quit_confirmation_menu",
+                                   [&](auto value) { global.set_show_quit_confirmation_menu(value); });
+      changed |= apply_value<bool>(global_json,
                                    "enable_notification_window",
                                    [&](auto value) { global.set_enable_notification_window(value); });
       changed |= apply_value<std::string>(global_json,

@@ -6,6 +6,7 @@ struct UIStatePayload: Decodable {
     var showIcon = false
     var showProfileName = false
     var showAdditionalMenuItems = false
+    var showQuitConfirmationMenu = true
     var enableMultitouchExtension = false
   }
 

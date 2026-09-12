@@ -36,6 +36,7 @@ struct SettingsConfiguration: Decodable {
     var showInMenuBar: Bool
     var showProfileNameInMenuBar: Bool
     var showAdditionalMenuItems: Bool
+    var showQuitConfirmationMenu: Bool
     var enableNotificationWindow: Bool
     var notificationWindowPosition: NotificationWindowPosition
     var notificationWindowRespectScreenVisibleFrame: Bool

@@ -23,6 +23,11 @@ struct UIView: View {
               Text("Show additional menu items (Default: off)")
             }
             .switchToggleStyle()
+
+            Toggle(isOn: $settings.configuration.globalConfiguration.showQuitConfirmationMenu) {
+              Text("Show confirmation submenu for Quit Karabiner-Elements (Default: on)")
+            }
+            .switchToggleStyle()
           }
           .padding()
           .frame(maxWidth: .infinity, alignment: .leading)
