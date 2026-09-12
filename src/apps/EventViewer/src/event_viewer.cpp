@@ -127,8 +127,12 @@ public:
         }
       });
 
-      monitor->values_arrived.connect([this, device_id](auto&& values) {
+      const auto& device_identifiers = device_properties->get_device_identifiers();
+      auto is_virtual_keyboard = device_identifiers.get_is_virtual_device() &&
+                                 device_identifiers.get_is_keyboard();
+      monitor->values_arrived.connect([this, device_id, is_virtual_keyboard](auto&& values) {
         handle_hid_values(device_id,
+                          is_virtual_keyboard,
                           *values);
       });
 
@@ -254,6 +258,7 @@ private:
   }
 
   void handle_hid_values(krbn::device_id device_id,
+                         bool is_virtual_keyboard,
                          const std::vector<pqrs::osx::iokit_hid_value>& values) const {
     auto callback = hid_value_arrived_callback.load();
     if (!callback) {
@@ -289,6 +294,7 @@ private:
         }
 
         callback(type_safe::get(device_id),
+                 is_virtual_keyboard,
                  type_safe::get(*usage_page),
                  type_safe::get(*usage),
                  v.get_integer_value(),
