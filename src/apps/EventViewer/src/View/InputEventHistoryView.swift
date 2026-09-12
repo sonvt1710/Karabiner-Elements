@@ -127,7 +127,11 @@ struct InputEventHistoryList: View {
                 .frame(alignment: .leading)
               }
               .padding(.horizontal, 12)
-              .background(entry.isUnknownEvent ? Color.orange.opacity(0.15) : Color.clear)
+              .background(
+                entry.isUnknownEvent
+                  ? Color.orange.opacity(0.15)
+                  : entry.isStateNotification ? Color.gray.opacity(0.15) : Color.clear
+              )
 
               Divider().id("divider \(entry.id)")
             }

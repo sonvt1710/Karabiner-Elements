@@ -158,6 +158,7 @@ func hidValueArrivedCallback(
       entry.nameJSON = "\"\(entry.name)\""
       entry.eventType = integerValue != 0 ? "on" : "off"
       entry.misc = "State notification (cannot be remapped)"
+      entry.isStateNotification = true
       EventHistory.shared.append(entry, captureToken: captureToken)
       return
     }
@@ -242,6 +243,7 @@ public class EventHistoryEntry: Identifiable, Equatable {
   public var nameJSON = ""
   public var misc = ""
   public var isUnknownEvent = false
+  public var isStateNotification = false
 
   public init(timestamp: Date) {
     self.timestamp = timestamp
